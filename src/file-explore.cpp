@@ -109,6 +109,13 @@ void getDirectoryContents(std::string path, std::vector<FileEntry> *contents) {
             file.filename = entry->d_name;
             file.is_directory = entry->d_type == DT_DIR;
             
+            for(int i = 0; i < contents.size(); i++) {
+                if(strncasecmp(contents->at(i).filename.c_str(), file.filename.c_str(), 256) < 0) {
+                    index++;
+                }
+            }
+            contents->insert(contents->begin() + index, f);
+            
             contents->push_back(file);
         }
     }
