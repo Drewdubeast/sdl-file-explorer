@@ -1,5 +1,5 @@
 CXX= g++
-CXXFLAGS= -std=c++11 -lSDL2main -lSDL2
+CXXFLAGS= -std=c++11 -lSDL2main -lSDL2 -lSDL2_ttf
 
 INCLUDE= 
 LIB= 
